@@ -1,6 +1,6 @@
 'use strict';
 
-const WHITELIST = [
+var WHITELIST = [
 	'ETIMEDOUT',
 	'ECONNRESET',
 	'EADDRINUSE',
@@ -9,7 +9,7 @@ const WHITELIST = [
 	'EPIPE'
 ];
 
-const BLACKLIST = [
+var BLACKLIST = [
 	'ENOTFOUND',
 	'ENETUNREACH'
 ];
