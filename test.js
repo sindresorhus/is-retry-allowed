@@ -18,6 +18,8 @@ test('whitelist', t => {
 	t.is(fn(err('ESOCKETTIMEDOUT')), true);
 	t.is(fn(err('ECONNREFUSED')), true);
 	t.is(fn(err('EPIPE')), true);
+	t.is(fn(err('EHOSTUNREACH')), true);
+	t.is(fn(err('EAI_AGAIN')), true);
 });
 
 test('blacklist', t => {
