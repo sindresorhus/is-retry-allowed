@@ -1,29 +1,30 @@
 {
-  "name": "is-retry-allowed",
-  "version": "1.2.0",
-  "description": "Is retry allowed for Error?",
-  "license": "MIT",
-  "repository": "floatdrop/is-retry-allowed",
-  "author": {
-    "name": "Vsevolod Strukchinsky",
-    "email": "floatdrop@gmail.com",
-    "url": "github.com/floatdrop"
-  },
-  "engines": {
-    "node": ">=0.10.0"
-  },
-  "scripts": {
-    "test": "xo && ava"
-  },
-  "files": [
-    "index.js"
-  ],
-  "keywords": [
-    ""
-  ],
-  "dependencies": {},
-  "devDependencies": {
-    "ava": "^0.8.0",
-    "xo": "^0.12.1"
-  }
+	"name": "is-retry-allowed",
+	"version": "1.2.0",
+	"description": "Check whether a request can be retried based on the `error.code`",
+	"license": "MIT",
+	"repository": "sindresorhus/is-retry-allowed",
+	"engines": {
+		"node": ">=8"
+	},
+	"scripts": {
+		"test": "xo && ava"
+	},
+	"files": [
+		"index.js"
+	],
+	"keywords": [
+		"retry",
+		"retries",
+		"allowed",
+		"check",
+		"http",
+		"https",
+		"request",
+		"fetch"
+	],
+	"devDependencies": {
+		"ava": "^2.3.0",
+		"xo": "^0.24.0"
+	}
 }

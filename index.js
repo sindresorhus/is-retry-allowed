@@ -1,6 +1,6 @@
 'use strict';
 
-var WHITELIST = [
+const whitelist = new Set([
 	'ETIMEDOUT',
 	'ECONNRESET',
 	'EADDRINUSE',
@@ -9,13 +9,13 @@ var WHITELIST = [
 	'EPIPE',
 	'EHOSTUNREACH',
 	'EAI_AGAIN'
-];
+]);
 
-var BLACKLIST = [
+const blacklist = new Set([
 	'ENOTFOUND',
 	'ENETUNREACH',
 
-	// SSL errors from https://github.com/nodejs/node/blob/ed3d8b13ee9a705d89f9e0397d9e96519e7e47ac/src/node_crypto.cc#L1950
+	// SSL errors from https://github.com/nodejs/node/blob/e585caa2bebbd238c763af588a40879b61cf240f/src/node_crypto.cc#L2563-L2589
 	'UNABLE_TO_GET_ISSUER_CERT',
 	'UNABLE_TO_GET_CRL',
 	'UNABLE_TO_DECRYPT_CERT_SIGNATURE',
@@ -43,18 +43,18 @@ var BLACKLIST = [
 	'INVALID_PURPOSE',
 	'CERT_UNTRUSTED',
 	'CERT_REJECTED'
-];
+]);
 
-module.exports = function (err) {
-	if (!err || !err.code) {
+module.exports = error => {
+	if (!error || !error.code) {
 		return true;
 	}
 
-	if (WHITELIST.indexOf(err.code) !== -1) {
+	if (whitelist.has(error.code)) {
 		return true;
 	}
 
-	if (BLACKLIST.indexOf(err.code) !== -1) {
+	if (blacklist.has(error.code)) {
 		return false;
 	}
 

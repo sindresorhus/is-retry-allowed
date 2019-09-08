@@ -1,6 +1,6 @@
-# is-retry-allowed [![Build Status](https://travis-ci.org/floatdrop/is-retry-allowed.svg?branch=master)](https://travis-ci.org/floatdrop/is-retry-allowed)
+# is-retry-allowed [![Build Status](https://travis-ci.org/sindresorhus/is-retry-allowed.svg?branch=master)](https://travis-ci.org/sindresorhus/is-retry-allowed)
 
-Is retry allowed for Error?
+> Check whether a request can be retried based on the `error.code`
 
 
 ## Install
@@ -32,11 +32,6 @@ isRetryAllowed({});
 
 #### error
 
-Type: `object`
+Type: `Error | object`
 
-Object with `code` property, which will be used to determine retry.
-
-
-## License
-
-MIT © [Vsevolod Strukchinsky](http://github.com/floatdrop)
+The `.code` property, if it exists, will be used to determine whether retry is allowed.
