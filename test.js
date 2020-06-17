@@ -9,7 +9,7 @@ test('defaults', t => {
 	t.true(isRetryAllowed({code: 'unicorns'}));
 });
 
-test('whitelist', t => {
+test('allowList', t => {
 	t.true(isRetryAllowed(error('ETIMEDOUT')));
 	t.true(isRetryAllowed(error('ECONNRESET')));
 	t.true(isRetryAllowed(error('EADDRINUSE')));
@@ -20,7 +20,7 @@ test('whitelist', t => {
 	t.true(isRetryAllowed(error('EAI_AGAIN')));
 });
 
-test('blacklist', t => {
+test('denyList', t => {
 	t.false(isRetryAllowed(error('ENOTFOUND')));
 	t.false(isRetryAllowed(error('ENETUNREACH')));
 	t.false(isRetryAllowed(error('UNABLE_TO_GET_ISSUER_CERT')));
