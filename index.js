@@ -1,6 +1,6 @@
 'use strict';
 
-const whitelist = new Set([
+const allowList = new Set([
 	'ETIMEDOUT',
 	'ECONNRESET',
 	'EADDRINUSE',
@@ -11,7 +11,7 @@ const whitelist = new Set([
 	'EAI_AGAIN'
 ]);
 
-const blacklist = new Set([
+const denyList = new Set([
 	'ENOTFOUND',
 	'ENETUNREACH',
 
@@ -50,11 +50,11 @@ module.exports = error => {
 		return true;
 	}
 
-	if (whitelist.has(error.code)) {
+	if (allowList.has(error.code)) {
 		return true;
 	}
 
-	if (blacklist.has(error.code)) {
+	if (denyList.has(error.code)) {
 		return false;
 	}
 
