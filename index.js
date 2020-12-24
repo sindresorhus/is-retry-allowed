@@ -1,16 +1,5 @@
 'use strict';
 
-const allowList = new Set([
-	'ETIMEDOUT',
-	'ECONNRESET',
-	'EADDRINUSE',
-	'ESOCKETTIMEDOUT',
-	'ECONNREFUSED',
-	'EPIPE',
-	'EHOSTUNREACH',
-	'EAI_AGAIN'
-]);
-
 const denyList = new Set([
 	'ENOTFOUND',
 	'ENETUNREACH',
@@ -45,18 +34,5 @@ const denyList = new Set([
 	'CERT_REJECTED'
 ]);
 
-module.exports = error => {
-	if (!error || !error.code) {
-		return true;
-	}
-
-	if (allowList.has(error.code)) {
-		return true;
-	}
-
-	if (denyList.has(error.code)) {
-		return false;
-	}
-
-	return true;
-};
+// TODO: Use `error?.code` when targeting Node.js 14
+module.exports = error => !denyList.has(error && error.code);
