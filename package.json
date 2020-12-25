@@ -17,7 +17,8 @@
 		"test": "xo && ava"
 	},
 	"files": [
-		"index.js"
+		"index.js",
+		"index.d.ts"
 	],
 	"keywords": [
 		"retry",
@@ -30,7 +31,8 @@
 		"fetch"
 	],
 	"devDependencies": {
-		"ava": "^2.3.0",
+		"ava": "^3.14.0",
+		"tsd": "^0.14.0",
 		"xo": "^0.36.1"
 	}
 }
