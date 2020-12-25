@@ -1,6 +1,6 @@
 {
 	"name": "is-retry-allowed",
-	"version": "2.0.0",
+	"version": "2.1.0",
 	"description": "Check whether a request can be retried based on the `error.code`",
 	"license": "MIT",
 	"repository": "sindresorhus/is-retry-allowed",
