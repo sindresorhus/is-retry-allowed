@@ -1,5 +1,5 @@
 /**
-Check whether a request can be retried based on the `error.code`
+Check whether a request can be retried based on the `error.code`.
 
 @param error - The `.code` property, if it exists, will be used to determine whether retry is allowed.
 
