@@ -1,10 +1,12 @@
 {
 	"name": "is-retry-allowed",
-	"version": "2.1.0",
+	"version": "2.2.0",
 	"description": "Check whether a request can be retried based on the `error.code`",
 	"license": "MIT",
 	"repository": "sindresorhus/is-retry-allowed",
-	"funding": "https://github.com/sponsors/sindresorhus",
+	"funding": {
+		"url": "https://github.com/sponsors/sindresorhus"
+	},
 	"author": {
 		"name": "Sindre Sorhus",
 		"email": "sindresorhus@gmail.com",
