@@ -4,7 +4,7 @@ const denyList = new Set([
 	'ENOTFOUND',
 	'ENETUNREACH',
 
-	// SSL errors from https://github.com/nodejs/node/blob/e585caa2bebbd238c763af588a40879b61cf240f/src/node_crypto.cc#L2563-L2589
+	// SSL errors from https://github.com/nodejs/node/blob/fc8e3e2cdc521978351de257030db0076d79e0ab/src/crypto/crypto_common.cc#L301-L328
 	'UNABLE_TO_GET_ISSUER_CERT',
 	'UNABLE_TO_GET_CRL',
 	'UNABLE_TO_DECRYPT_CERT_SIGNATURE',
@@ -31,7 +31,8 @@ const denyList = new Set([
 	'PATH_LENGTH_EXCEEDED',
 	'INVALID_PURPOSE',
 	'CERT_UNTRUSTED',
-	'CERT_REJECTED'
+	'CERT_REJECTED',
+	'HOSTNAME_MISMATCH'
 ]);
 
 // TODO: Use `error?.code` when targeting Node.js 14
