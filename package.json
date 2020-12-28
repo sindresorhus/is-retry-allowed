@@ -4,13 +4,11 @@
 	"description": "Check whether a request can be retried based on the `error.code`",
 	"license": "MIT",
 	"repository": "sindresorhus/is-retry-allowed",
-	"funding": {
-		"url": "https://github.com/sponsors/sindresorhus"
-	},
+	"funding": "https://github.com/sponsors/sindresorhus",
 	"author": {
 		"name": "Sindre Sorhus",
 		"email": "sindresorhus@gmail.com",
-		"url": "sindresorhus.com"
+		"url": "https://sindresorhus.com"
 	},
 	"engines": {
 		"node": ">=10"
