@@ -5,7 +5,7 @@ Check whether a request can be retried based on the `error.code`.
 
 @example
 ```
-import isRetryAllowed = require('is-retry-allowed');
+import isRetryAllowed from 'is-retry-allowed';
 
 isRetryAllowed({code: 'ETIMEDOUT'});
 //=> true
@@ -17,6 +17,4 @@ isRetryAllowed({});
 //=> true
 ```
 */
-declare function isRetryAllowed(error?: Error | Record<string, unknown>): boolean;
-
-export = isRetryAllowed;
+export default function isRetryAllowed(error?: Error | Record<string, unknown>): boolean;

@@ -1,5 +1,3 @@
-'use strict';
-
 const denyList = new Set([
 	'ENOTFOUND',
 	'ENETUNREACH',
@@ -36,4 +34,6 @@ const denyList = new Set([
 ]);
 
 // TODO: Use `error?.code` when targeting Node.js 14
-module.exports = error => !denyList.has(error && error.code);
+export default function isRetryAllowed(error) {
+	return !denyList.has(error && error.code);
+}

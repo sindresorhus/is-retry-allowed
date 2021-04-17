@@ -1,5 +1,5 @@
 import {expectType} from 'tsd';
-import isRetryAllowed = require('.');
+import isRetryAllowed from './index.js';
 
 expectType<boolean>(isRetryAllowed({code: 'ETIMEDOUT'}));
 expectType<boolean>(isRetryAllowed({}));

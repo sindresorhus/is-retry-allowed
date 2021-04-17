@@ -5,13 +5,13 @@
 ## Install
 
 ```
-$ npm install --save is-retry-allowed
+$ npm install is-retry-allowed
 ```
 
 ## Usage
 
 ```js
-const isRetryAllowed = require('is-retry-allowed');
+import isRetryAllowed from 'is-retry-allowed';
 
 isRetryAllowed({code: 'ETIMEDOUT'});
 //=> true

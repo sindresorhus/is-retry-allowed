@@ -1,5 +1,5 @@
-const test = require('ava');
-const isRetryAllowed = require('.');
+import test from 'ava';
+import isRetryAllowed from './index.js';
 
 const error = code => ({code});
 
