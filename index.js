@@ -1,4 +1,4 @@
-const denyList = new Set([
+const _denyList = [
 	'ENOTFOUND',
 	'ENETUNREACH',
 
@@ -31,7 +31,12 @@ const denyList = new Set([
 	'CERT_UNTRUSTED',
 	'CERT_REJECTED',
 	'HOSTNAME_MISMATCH'
-]);
+];
+
+const denyList = new Set();
+_denyList.forEach(function (item) {
+	denyList.add(item);
+});
 
 // TODO: Use `error?.code` when targeting Node.js 14
 export default function isRetryAllowed(error) {
